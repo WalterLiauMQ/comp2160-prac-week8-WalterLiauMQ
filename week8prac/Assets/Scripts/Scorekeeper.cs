@@ -20,7 +20,8 @@ public class Scorekeeper : MonoBehaviour
     // Points gained per Pickup
     public float pickupPoints = 10;
 
-    // Current Score (Pub)
+
+    // Current Score for P1 (Pub)
     public float CurrentScore
     {
         get
@@ -29,8 +30,21 @@ public class Scorekeeper : MonoBehaviour
         }
     }
 
-    // Current Score (Priv)
+    // Current Score for P1 (Priv)
     private float currentScore = 0;
+
+    // Current Score for P2 (Pub)
+    public float CurrentScoreP2
+    {
+        get
+        {
+            return currentScoreP2;
+        }
+    }
+
+    // Current Score for P2 (Priv)
+    private float currentScoreP2 = 0;
+
 
     // Awake is called before Start
     void Awake()
@@ -45,8 +59,15 @@ public class Scorekeeper : MonoBehaviour
 
     }
 
+    // Adds score for P1
     public void AddScore()
     {
         currentScore += pickupPoints;
+    }
+    
+    // Adds score for P2
+    public void AddScoreP2()
+    {
+        currentScoreP2 += pickupPoints;
     }
 }

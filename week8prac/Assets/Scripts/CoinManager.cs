@@ -13,6 +13,12 @@ public class CoinManager : MonoBehaviour
             Scorekeeper.Instance.AddScore();
             Destroy(gameObject);
         }
+
+        if (collision.tag == "Player2")
+        {
+            Scorekeeper.Instance.AddScoreP2();
+            Destroy(gameObject);
+        }
     }
 
 }
