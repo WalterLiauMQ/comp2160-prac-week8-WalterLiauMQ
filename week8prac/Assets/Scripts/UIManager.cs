@@ -29,7 +29,11 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Finds the Text child in the Canvas and changes it to the Current Score provided by the Game Manager.
-        scoreCanvas.transform.GetComponentInChildren<Text>().text = "Score : " + Scorekeeper.Instance.CurrentScore.ToString();
+        // Finds the Text child of P1's Score in the Canvas and changes it to the Current Score provided by the Game Manager.
+        scoreCanvas.transform.Find("Score").GetComponent<Text>().text = "P1 Score : " + Scorekeeper.Instance.CurrentScore.ToString();
+
+        // Finds the Text child of P2's Score in the Canvas and changes it to the Current Score provided by the Game Manager.
+        scoreCanvas.transform.Find("ScoreP2").GetComponent<Text>().text = "P2 Score : " + Scorekeeper.Instance.CurrentScoreP2.ToString();
+
     }
 }
